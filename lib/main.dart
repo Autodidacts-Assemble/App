@@ -1,18 +1,14 @@
-
-import 'package:auth_firebase/models/user.dart';
-import 'package:auth_firebase/screen/wrapper.dart';
-import 'package:auth_firebase/services/auth.dart';
-import 'package:flutter/material.dart';
+import 'package:example/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'firebase_options.dart';
-
-
-
-
+import 'package:example/models/user.dart';
+import 'package:example/services/auth.dart';
+import 'package:example/screens/wrapper.dart';
 
 Future <void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -22,6 +18,7 @@ Future <void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return StreamProvider<MyUser?>.value(
@@ -34,5 +31,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 

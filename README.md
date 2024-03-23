@@ -1,6 +1,6 @@
-# auth_firebase
+# example
 
-Authentication using firebase
+A new Flutter project.
 
 ## Getting Started
 
